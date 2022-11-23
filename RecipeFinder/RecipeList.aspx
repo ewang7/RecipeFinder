@@ -4,7 +4,7 @@
         <h1>Recipes</h1>
     </div>
     <div>
-         <asp:Label ID="lblDish" style="font-size: large; font-style: normal" Text="Query" runat="server"/>
+         <asp:Label ID="lblDish" style="font-size: large; font-style: normal" Text="Ingredient(s):" runat="server"/>
          <asp:TextBox ID="IngredientInput" Text="pasta" runat="server"/>
          <asp:Label ID="lblCuisine" style="font-size: large; font-style: normal" Text="Cuisine" runat="server"/>
          <asp:DropDownList id="CuisineList"
@@ -16,7 +16,7 @@
                   <asp:ListItem Value="french"> French </asp:ListItem>
                   <asp:ListItem Value="mexican"> Mexican </asp:ListItem>
                </asp:DropDownList>
-        <asp:Button ID="SearchButton" style="font-size: large; font-style: normal" Text="Search" OnClick="SearchButton_Click" runat="server"/>
+        <asp:Button ID="SearchButton" style="font-size: large; font-style: normal" Text="Search" OnClick="SearchButton_Click" runat="server" />
     </div>
     <br />
     <br />
@@ -28,7 +28,7 @@
                 <EmptyDataTemplate>
                     <table >
                         <tr>
-                            <td>No data was returned.</td>
+                            <td>No Recipes were Found.</td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>

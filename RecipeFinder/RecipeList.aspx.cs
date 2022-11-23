@@ -9,13 +9,14 @@ using System.Threading;
 using System.Web.ModelBinding;
 using RecipeFinder.Models;
 using RecipeFinder.Helper;
+using System.Windows.Controls;
 
 namespace RecipeFinder
 {
     public partial class RecipeList : System.Web.UI.Page
     {
-        private string ingredient = string.Empty;
-        private string cuisine = string.Empty;
+        private string ingredient = "";
+        private string cuisine = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             cuisine = CuisineList.SelectedValue;
