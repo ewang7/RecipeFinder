@@ -24,10 +24,11 @@ namespace RecipeFinder
 
         public Models.RecipeDetail GetRecipeDetail([QueryString("id")] long id)
         {
-            recipeDetail1 = Task.Run(async () => await GetRecipeDetailData(id)).ConfigureAwait(false).GetAwaiter().GetResult();
+            recipeDetail1 = GetRecipeDetailData(id);
             return recipeDetail1;
         }
 
+        
         public List<Step> GetSteps()
         {
             steps = recipeDetail1.analyzedInstructions.Count > 0 ? recipeDetail1.analyzedInstructions[0].steps : new List<Step>();
@@ -41,10 +42,10 @@ namespace RecipeFinder
                                      select ingredients.ToList();
         }
 
-        private async Task<Models.RecipeDetail> GetRecipeDetailData(long id)
+        private Models.RecipeDetail GetRecipeDetailData(long id)
         {
-            RapidAPIDataService svc = new RapidAPIDataService();
-            Models.RecipeDetail recipeDetail = await svc.getRecipeDetail(id);
+            RapidAPIDataService controller = new RapidAPIDataService();
+            Models.RecipeDetail recipeDetail = controller.getRecipeDetail(id);
             return recipeDetail;
         }
     }

@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="Site.Master" AutoEventWireup="true" CodeBehind="RecipeList.aspx.cs" Inherits="RecipeFinder.RecipeList" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
+        
+
+    
+<!--
     <div>
         <h1>Recipes</h1>
     </div>
@@ -44,29 +49,34 @@
                         </tr>
                         <tr runat="server" id="itemPlaceholder" />
                         </table>
-                        <%--<asp:DataPager ID="DataPager1" runat="server">
+                        -<asp:DataPager ID="DataPager1" runat="server">
                             <Fields>
                                 <asp:NumericPagerField />
                             </Fields>
-                             </asp:DataPager>--%>
+                             </asp:DataPager>--
                     </LayoutTemplate>
                 <ItemTemplate>
                   <table cellpadding="2"  class="table" border="0" ID="tbl2" runat="server">
                     <tr runat="server">
                         <td>
                             <b style="font-size: large; font-style: normal">
-                                <a href="/RecipeDetail.aspx?id=<%#: Item.id %>"><%#: Item.id %></a>
+                                <a href="/RecipeDetail.aspx?id=#: Item.id %>">#: Item.id </a>
                             </b>
                         </td>
                         <td>
-                            <asp:Label ID="title" runat="server" style="font-size: large; font-style: normal" Text='<%# Item.title %>' />
+                            <asp:Label ID="title" runat="server" style="font-size: large; font-style: normal" Text='# Item.title ' />
                         </td>
                         <td>
-                            <asp:Image ID="Image1" runat="server" ImageUrl='<%#Item.image%>'/>
+                            <asp:Image ID="Image1" runat="server" ImageUrl='#Item.image'/>
                         </td>
                      </tr>     
                    </table>
                 </ItemTemplate>
             </asp:ListView>
         </div>
+
+-->
+
 </asp:Content>
+
+
