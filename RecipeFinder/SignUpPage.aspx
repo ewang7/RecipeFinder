@@ -5,17 +5,30 @@
    
     
         <div>
+            
             Username:
-            <input id="uname" type="text" /><br />
+                <asp:TextBox id='txtUserName' runat='server'></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please fill in Username"
+                ControlToValidate="txtUserName">
+
+            </asp:RequiredFieldValidator>
+            <br />
+            <br />
             Password:
-            <input id="pwd" type="password" /><br />
+            <asp:TextBox id='txtPassword' TextMode="Password" runat='server'></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please fill in Password"
+                ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
+            <br />
             Confirm Password:
-            <input id="cpwd" type="text" /><br />
+                 <asp:TextBox id='txtConfirm' TextMode="Password" runat='server'></asp:TextBox>    
+            <br />
             Email Address:
-            <input id="email" type="text" /><br />
+            <asp:TextBox id='txtEmailAdd' runat='server'></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator3"
+                runat="server" ErrorMessage="Please fill in Email Address" ControlToValidate="txtEmailAdd"></asp:RequiredFieldValidator>
             <br />
             <asp:Button ID="signupb" runat="server" Text="Sign Up" OnClick="Button1_Click" />
             <asp:Label ID="errormessage" runat="server" Text="Label"></asp:Label>
+             
             <br />
             <br />
             <br />
@@ -23,12 +36,6 @@
             <br />
             <br />
             <br />
-            <asp:CreateUserWizard ID="CreateUserWizard1" runat="server">
-                <WizardSteps>
-                    <asp:CreateUserWizardStep runat="server" />
-                    <asp:CompleteWizardStep runat="server" />
-                </WizardSteps>
-            </asp:CreateUserWizard>
             <br />
             <br />
         </div>

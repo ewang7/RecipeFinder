@@ -14,39 +14,50 @@ namespace RecipeFinder
         private SqlConnection conn;
         private string uname;
         private string pwd;
-        private string cpwd;
+    
         private string email;
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection();
-            conn.ConnectionString = "Server=sql.cs.luc.edu;uid=aopon;pwd=p43613; Initial Catalog=aopon";
+            conn.ConnectionString = "Server=sql.cs.luc.edu;uid=aopon;pwd=p43613; Initial Catalog=RecipeFinderDB";
             conn.Open();
 
         }
 
-        public int ExecuteAction(string sql)
-        {
-            SqlCommand command = new SqlCommand(sql, conn);
-            int result = command.ExecuteNonQuery();
-            return result;
-        }
+       
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            uname = Request.Form["uname"];
-            pwd   = Request.Form["pwd"];
-            cpwd  = Request.Form["cpwd"];
-            email = Request.Form["email"];
+            
+                // uname = usrname;
+                pwd = Request.Form["passwd"];
+                email = Request.Form["email"];
 
-            string sqlstatement = "INSERT INTO dbo.UserTable VALUES (1,'uname','pwd','email')";
+                string sql = "INSERT INTO dbo.UserTable VALUES (@Uname,@Pwd,'',@Email)";
 
-            int result = ExecuteAction(sqlstatement);
-            if (result!=1) 
-            {
-                string err = Request.Form["errormessage"];
-              
-            }
-            conn.Close();
+
+                SqlCommand command = new SqlCommand(sql, conn);
+                command.Parameters.Add("@Uname", System.Data.SqlDbType.VarChar, 40).Value = txtUserName.Text;
+                command.Parameters.Add("@Pwd", System.Data.SqlDbType.VarChar, 40).Value = txtPassword.Text;
+                command.Parameters.Add("@Email", System.Data.SqlDbType.VarChar, 40).Value = txtEmailAdd.Text;
+
+                int result = command.ExecuteNonQuery();
+
+
+                if (result == 1)
+                {
+                    errormessage.Text = "Insert successful";
+
+                }
+                conn.Close();
+            
+            
         }
+
+        protected bool isValidEmail(  ) {
+
+
+            return false;
+         }
     }
 }
