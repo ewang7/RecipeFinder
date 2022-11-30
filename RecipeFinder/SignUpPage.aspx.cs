@@ -41,7 +41,15 @@ namespace RecipeFinder
                 command.Parameters.Add("@Pwd", System.Data.SqlDbType.VarChar, 40).Value = txtPassword.Text;
                 command.Parameters.Add("@Email", System.Data.SqlDbType.VarChar, 40).Value = txtEmailAdd.Text;
 
-                int result = command.ExecuteNonQuery();
+            int result = 0;
+
+            if (isNameTaken(txtUserName.Text))
+            {
+                result = command.ExecuteNonQuery();
+            }
+            else {
+                errormessage.Text = "Username taken";
+            };
 
 
                 if (result == 1)
@@ -54,10 +62,32 @@ namespace RecipeFinder
             
         }
 
-        protected bool isValidEmail(  ) {
+        protected bool isNameTaken(String username) {
+            //sql string used to get username from DB
+            string sql = "SELECT * FROM UserTable WHERE Username=@Uname";
+            bool result = true;
+
+            SqlCommand comm = new SqlCommand(sql,conn);
+            comm.Parameters.Add("@Uname", System.Data.SqlDbType.VarChar, 40).Value = txtUserName.Text;
 
 
-            return false;
+            SqlDataReader dr = comm.ExecuteReader();
+
+            //command is executed and converted to string
+
+            if (dr.Read())
+            {
+                string namecheck =  dr.GetString(1);
+                //if the string comes back empty, we know the username hasn't been taken
+                if (!namecheck.Equals("")) 
+                {
+                    dr.Close();
+                    result = false;
+                }
+             
+            }
+            dr.Close();
+            return result;
          }
     }
 }
