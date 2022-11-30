@@ -21,6 +21,8 @@
             <br />
             Confirm Password:
                  <asp:TextBox id='txtConfirm' TextMode="Password" runat='server'></asp:TextBox>    
+            <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Passwords do not match" ControlToValidate="txtPassword" ControlToCompare="txtConfirm"></asp:CompareValidator>
+            
             <br />
             Email Address:
             <asp:TextBox id='txtEmailAdd' runat='server'></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator3"
