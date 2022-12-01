@@ -38,7 +38,10 @@ namespace RecipeFinder
 
                 SqlCommand command = new SqlCommand(sql, conn);
                 command.Parameters.Add("@Uname", System.Data.SqlDbType.VarChar, 40).Value = txtUserName.Text;
-                command.Parameters.Add("@Pwd", System.Data.SqlDbType.VarChar, 40).Value = txtPassword.Text;
+
+            //set up erncryption for password
+            string enPass =PasswordHelper.ComputeHash(txtPassword.Text,"SHA512",null);
+            command.Parameters.Add("@Pwd", System.Data.SqlDbType.VarChar, 40).Value = enPass;
                 command.Parameters.Add("@Email", System.Data.SqlDbType.VarChar, 40).Value = txtEmailAdd.Text;
 
             int result = 0;

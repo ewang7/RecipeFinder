@@ -2,14 +2,23 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-<head runat="server">
+   
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" >
         <div>
-        </div>
-        Username:<input id="Text1" type="text" /><br />
-        Password:<input id="Password1" type="password" /></form>
+            Username:
+            <asp:TextBox ID="txtUname" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please enter username" ControlToValidate="txtUname"></asp:RequiredFieldValidator>
+            <br />
+            Password:
+            <asp:TextBox ID="Password1" TextMode="Password" runat="server" ></asp:TextBox>
+            <br />
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" />
+                <br />
+            <asp:Label ID="logininfo" runat="server" Text=""></asp:Label>
+                </div>
+        </form>
 </body>
 </asp:Content>
