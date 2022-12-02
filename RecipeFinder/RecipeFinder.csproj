@@ -138,6 +138,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LoginPage.aspx" />
     <Content Include="DietaryRestrictionSearch.aspx" />
     <Content Include="RecipeDetail.aspx" />
     <Content Include="RecipeList.aspx" />
@@ -187,9 +188,11 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="SignUpPage.aspx" />
     <Content Include="Site.Master" />
     <Content Include="CuisineSearch.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="UserProfile Page.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -197,6 +200,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs" />
+    <Compile Include="PasswordHelper.cs" />
     <Compile Include="DietaryRestrictionSearch.aspx.cs">
       <DependentUpon>DietaryRestrictionSearch.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,6 +266,13 @@
     <Compile Include="Models\Us.cs" />
     <Compile Include="Models\WinePairing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignUpPage.aspx.cs">
+      <DependentUpon>SignUpPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUpPage.aspx.designer.cs">
+      <DependentUpon>SignUpPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -280,6 +300,13 @@
     </Compile>
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile Page.aspx.cs">
+      <DependentUpon>UserProfile Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfile Page.aspx.designer.cs">
+      <DependentUpon>UserProfile Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
