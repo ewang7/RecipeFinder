@@ -30,6 +30,24 @@ namespace RecipeFinder.Helper
                 return null;
         }
 
+        public SuperDietaryRestrictionSearch getDietaryRestrictionRecipe(string ingredientInput, string dietaryRestriction)
+        {
+            RestClient client = new RestClient("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/");
+            var request = new RestRequest("recipes/search?query=" + ingredientInput + "&diet=" + dietaryRestriction + "&number=5&ignorePantry=true&ranking=1", Method.Get);
+            request.AddHeader("X-RapidAPI-Key", "a050c13f77msh25ab18508fd852ep1edf0ejsn88311a72d376");
+            request.AddHeader("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com");
+            RestResponse response = client.Execute(request);
+            if (response.IsSuccessful)
+            {
+                String searchResults = response.Content;
+                SuperDietaryRestrictionSearch recipeData = JsonConvert.DeserializeObject<SuperDietaryRestrictionSearch>(searchResults);
+                return recipeData;
+            }
+            else
+                return null;
+        }
+
+
         /*
         public async Task<Recipe[]> getRecipes(string ingredient, string cuisine)
         {

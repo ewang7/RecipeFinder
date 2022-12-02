@@ -138,6 +138,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DietaryRestrictionSearch.aspx" />
     <Content Include="RecipeDetail.aspx" />
     <Content Include="RecipeList.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -196,9 +197,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="DietaryRestrictionSearch.aspx.cs">
+      <DependentUpon>DietaryRestrictionSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DietaryRestrictionSearch.aspx.designer.cs">
+      <DependentUpon>DietaryRestrictionSearch.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\MissedIngredient.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\SuperCuisineSearch.cs" />
+    <Compile Include="Models\SuperDietaryRestrictionSearch.cs" />
     <Compile Include="Models\SuperIngredientSearch.cs" />
     <Compile Include="Models\UsedIngredient.cs" />
     <Compile Include="RecipeDetail.aspx.cs">

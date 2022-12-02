@@ -52,6 +52,7 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="CuisineSearch.aspx">CuisineSearch</a></li>
+                        <li><a runat="server" href="DietaryRestrictionSearch.aspx">DietaryRestrictionSearch</a></li>
                     </ul>
                 </div>
             </div>
