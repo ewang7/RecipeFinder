@@ -15,6 +15,7 @@ namespace RecipeFinder
         private SqlConnection conn;
         private string uname;
         private string pwd;
+        private PasswordHelper pwh;
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection();
@@ -33,6 +34,9 @@ namespace RecipeFinder
             else 
             {
                 logininfo.Text = "User signed in";
+                Session["id"] = txtUname.Text;
+                Response.Redirect("RecipeList.aspx");
+                Session.RemoveAll();
             }
 
 
@@ -42,12 +46,16 @@ namespace RecipeFinder
         protected bool isLoginValid(String username,String password)
         {
             //sql string used to get username from DB
-            string sql = "SELECT * FROM UserTable WHERE Username=@Uname AND Password=@Pwd";
+            string sql = "SELECT Username,Password FROM UserTable WHERE Username=@Uname";
             bool result = true;
+            pwh = new PasswordHelper();
 
             SqlCommand comm = new SqlCommand(sql, conn);
             comm.Parameters.Add("@Uname", System.Data.SqlDbType.VarChar, 40).Value = txtUname.Text;
-            comm.Parameters.Add("@Pwd", System.Data.SqlDbType.VarChar, 40).Value = Password1.Text;
+
+
+           // bool enPConfirm = PasswordHelper.VerifyHash(Password1.Text,"SHA512",password);
+            //comm.Parameters.Add("@Pwd", System.Data.SqlDbType.VarChar, 40).Value = Password1.Text;
 
 
             SqlDataReader dr = comm.ExecuteReader();
@@ -56,8 +64,8 @@ namespace RecipeFinder
 
             if (dr.Read())
             {
-                string namecheck = dr.GetString(1);
-               // string pwcheck = dr.GetString(2);
+                string namecheck = dr.GetString(0);
+                 // string pwcheck = pwh.Decrypt(dr.GetString(1));
                 //if the string comes back empty, we know the username isn't present
                 if (namecheck.Equals(""))
                 {

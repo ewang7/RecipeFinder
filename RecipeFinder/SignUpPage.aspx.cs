@@ -14,6 +14,7 @@ namespace RecipeFinder
         private SqlConnection conn;
         private string uname;
         private string pwd;
+        private PasswordHelper pwh;
     
         private string email;
         protected void Page_Load(object sender, EventArgs e)
@@ -32,6 +33,7 @@ namespace RecipeFinder
                 // uname = usrname;
                 pwd = Request.Form["passwd"];
                 email = Request.Form["email"];
+                pwh = new PasswordHelper();
 
                 string sql = "INSERT INTO dbo.UserTable VALUES (@Uname,@Pwd,'',@Email)";
 
@@ -40,9 +42,9 @@ namespace RecipeFinder
                 command.Parameters.Add("@Uname", System.Data.SqlDbType.VarChar, 40).Value = txtUserName.Text;
 
             //set up erncryption for password
-            string enPass =PasswordHelper.ComputeHash(txtPassword.Text,"SHA512",null);
+            String enPass= pwh.Encrypt(txtPassword.Text);
             command.Parameters.Add("@Pwd", System.Data.SqlDbType.VarChar, 40).Value = enPass;
-                command.Parameters.Add("@Email", System.Data.SqlDbType.VarChar, 40).Value = txtEmailAdd.Text;
+            command.Parameters.Add("@Email", System.Data.SqlDbType.VarChar, 40).Value = txtEmailAdd.Text;
 
             int result = 0;
 
