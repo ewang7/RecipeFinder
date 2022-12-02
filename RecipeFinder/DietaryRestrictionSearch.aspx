@@ -1,11 +1,20 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="RecipeFinder._Default" %>
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DietaryRestrictionSearch.aspx.cs" Inherits="RecipeFinder.DietSearch" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <p>
         <br />
     </p>
     <p> (Please separate multiple ingredients by comma) </p>
         <input id="userIngredients" type="text" value="Ingredient(s)..." runat="server" />
-        <input id="SubmitBtn" type="submit" value="Search" runat="server" OnServerClick="IngredientSearchSubmit"/>
+    <label>Dietary Restriction: </label>
+        <select name="dietaryRestriction" id="dietaryRestriction">
+            <option value="pescetarian">Pescetarian</option>
+            <option value="lacto vegetarian">Lacto Vegetarian</option>
+            <option value="ovo vegetarian">Ovo Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="vegetarian">Vegetarian</option>
+        </select>
+    <br />
+        <input id="SubmitBtn" type="submit" value="Search" runat="server" OnServerClick="SearchButton_Click"/>
     <p></p>
     <br />
         <div id="Recipes" title="Recipes" style="text-align: center">

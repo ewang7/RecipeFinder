@@ -46,12 +46,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">RecipeFinder</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="RecipeList.aspx">Recipes</a></li>
+                        <li><a runat="server" href="CuisineSearch.aspx">CuisineSearch</a></li>
+                        <li><a runat="server" href="DietaryRestrictionSearch.aspx">DietaryRestrictionSearch</a></li>
                     </ul>
                 </div>
             </div>

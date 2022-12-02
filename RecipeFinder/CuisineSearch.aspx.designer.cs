@@ -11,7 +11,7 @@ namespace RecipeFinder
 {
 
 
-    public partial class _Default
+    public partial class CuisineSearch
     {
 
         /// <summary>
