@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CuisineSearch.aspx.cs" Inherits="RecipeFinder.CuisineSearch" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-            <div>
-            <p> (Please separate multiple ingredients by comma) </p>
+    <center>
+        <br />
         <input id="userIngredients" type="text" value="Ingredient(s)..." runat="server" />
         <select name="cuisineDropdown" id="cuisineDropdown">
             <option value="chinese">Chinese</option>
@@ -14,6 +13,9 @@
         </select>
         <input id="SubmitBtn" type="submit" value="Search" runat="server" OnServerClick="SearchButton_Click"/>
     <p></p>
+         <p> (Please separate multiple ingredients by comma) </p>
+    </center>
+    <div>    
     <br />
         <div id="Recipes" title="Recipes" style="text-align: center">
             <table class="table" border="0" ID="tbl1" runat="server">

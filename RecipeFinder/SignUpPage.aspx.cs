@@ -20,7 +20,8 @@ namespace RecipeFinder
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection();
-            conn.ConnectionString = "Server=sql.cs.luc.edu;uid=aopon;pwd=p43613; Initial Catalog=RecipeFinderDB";
+            //ewang8
+            conn.ConnectionString = "Server=sql.cs.luc.edu;uid=ewang8;pwd=p00277; Initial Catalog=RecipeFinderDB";
             conn.Open();
 
         }

@@ -138,6 +138,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cookAvatarIcon.jpg" />
     <Content Include="LoginPage.aspx" />
     <Content Include="DietaryRestrictionSearch.aspx" />
     <Content Include="RecipeDetail.aspx" />
@@ -192,6 +193,7 @@
     <Content Include="Site.Master" />
     <Content Include="CuisineSearch.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="UserPage.aspx" />
     <Content Include="UserProfile Page.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -200,7 +202,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-
     <Compile Include="LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -300,6 +301,13 @@
     </Compile>
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage.aspx.cs">
+      <DependentUpon>UserPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage.aspx.designer.cs">
+      <DependentUpon>UserPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserProfile Page.aspx.cs">
       <DependentUpon>UserProfile Page.aspx</DependentUpon>

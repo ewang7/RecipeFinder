@@ -3,10 +3,11 @@
     <p>
         <br />
     </p>
-    <p> (Please separate multiple ingredients by comma) </p>
+    <center>
         <input id="userIngredients" type="text" value="Ingredient(s)..." runat="server" />
         <input id="SubmitBtn" type="submit" value="Search" runat="server" OnServerClick="IngredientSearchSubmit"/>
-    <p></p>
+        <p> (Please separate multiple ingredients by comma) </p>
+    </center>
     <br />
         <div id="Recipes" title="Recipes" style="text-align: center">
             <table class="table" border="0" ID="tbl1" runat="server">

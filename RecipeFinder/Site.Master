@@ -51,8 +51,11 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="UserPage.aspx">UserPage</a></li>
                         <li><a runat="server" href="CuisineSearch.aspx">CuisineSearch</a></li>
                         <li><a runat="server" href="DietaryRestrictionSearch.aspx">DietaryRestrictionSearch</a></li>
+                        <li><a runat="server" href="SignUpPage.aspx">Sign-Up</a></li>
+                        <li><a runat="server" href="LoginPage.aspx">Login-Page</a></li>
                     </ul>
                 </div>
             </div>
