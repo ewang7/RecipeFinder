@@ -34,7 +34,7 @@ namespace RecipeFinder.Helper
         {
             RestClient client = new RestClient("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/");
             var request = new RestRequest("recipes/search?query=" + ingredientInput + "&diet=" + dietaryRestriction + "&number=5&ignorePantry=true&ranking=1", Method.Get);
-            request.AddHeader("X-RapidAPI-Key", "a050c13f77msh25ab18508fd852ep1edf0ejsn88311a72d376");
+            request.AddHeader("X-RapidAPI-Key", "API_KEY");
             request.AddHeader("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com");
             RestResponse response = client.Execute(request);
             if (response.IsSuccessful)
@@ -58,7 +58,7 @@ namespace RecipeFinder.Helper
                 RequestUri = new Uri("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=" + ingredient + "&cuisine=" + cuisine + "&offset=0&number=20&limitLicense=false&ranking=2"),
                 Headers =
                 {
-                    { "X-RapidAPI-Key", "a050c13f77msh25ab18508fd852ep1edf0ejsn88311a72d376" },
+                    { "X-RapidAPI-Key", "API_KEY" },
                     { "X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com" },
                 },
             };
@@ -81,7 +81,7 @@ namespace RecipeFinder.Helper
                 RequestUri = new Uri("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + id.ToString() + "/information"),
                 Headers =
                 {
-                    { "X-RapidAPI-Key", "a050c13f77msh25ab18508fd852ep1edf0ejsn88311a72d376" },
+                    { "X-RapidAPI-Key", "API_KEY" },
                     { "X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com" },
                 },
             };
@@ -99,7 +99,7 @@ namespace RecipeFinder.Helper
         {
             RestClient client = new RestClient("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/");
             var request = new RestRequest("recipes/complexSearch?query=" + ingredient + "&cuisine=" + cuisine + "&offset=0&number=5&limitLicense=false&ranking=2", Method.Get);
-            request.AddHeader("X-RapidAPI-Key", "a050c13f77msh25ab18508fd852ep1edf0ejsn88311a72d376");
+            request.AddHeader("X-RapidAPI-Key", "API_KEY");
             request.AddHeader("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com");
             RestResponse response = client.Execute(request);
             if (response.IsSuccessful)
@@ -116,7 +116,7 @@ namespace RecipeFinder.Helper
         {
             RestClient client = new RestClient("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/");
             var request = new RestRequest("recipes/" + id.ToString() + "/information", Method.Get);
-            request.AddHeader("X-RapidAPI-Key", "a050c13f77msh25ab18508fd852ep1edf0ejsn88311a72d376");
+            request.AddHeader("X-RapidAPI-Key", "API_KEY");
             request.AddHeader("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com");
             RestResponse response = client.Execute(request);
             if (response.IsSuccessful)
